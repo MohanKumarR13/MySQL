@@ -1,0 +1,21 @@
+JDBC
+-----
+1.Java (JDK)
+2. Eclipse
+3.MySQL JDBC Driver
+
+Insert,Update,Delete -DML COMMANDS
+----------------------
+
+1.Create a Conncetion
+2.Create Statement/Query
+3.Excecute Statement/Query
+4.Close Connection
+
+Select -Data Retrieval/Data Query Language
+------
+1.Create a Conncetion
+2.Create Statement/Query
+3.Excecute Statement/Query
+4.Store the results in result set
+5.Close Connection
