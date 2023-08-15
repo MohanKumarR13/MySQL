@@ -1,0 +1,10 @@
+use student
+set autocommit=0;
+create table student(sid int ( 3),sname varchar( 12))
+insert into student values(1001,'mohan')
+insert into student values(1002,'kumar')
+insert into student values(1003,'mohankumar')
+commit
+select * from students
+delete from student where sname='mohan';
+rollback to  students

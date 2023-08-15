@@ -1,0 +1,20 @@
+View And Index
+==============
+View
+-----
+use world
+
+select * from country
+
+create view countries as select code,name from country
+select * from countries
+drop view  countries
+
+Index
+-----
+use world
+
+select *from country
+ 
+ create index codes on country (Code)
+drop index codes on country 

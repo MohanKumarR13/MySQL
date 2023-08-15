@@ -1,0 +1,37 @@
+Working With MySQL in CLI mode
+------------------------------
+1.How to connect to MySQL DB Using MySQL Shell
+----------------------------------------------------
+1.\sql
+2.\connect root@localhost:3306/mydb
+3.Password--N
+4.show databases;
+5.select * from student;
+=========================================================
+2.How to connect to MySQL DB Using Command Line Client
+--------------------------------------------------------
+1. show databases;
+2. use mydb
+3.show tables;
+4. select * from student;
+===============================================================
+3.How to connect to MySQL DB Using Windows Command
+-------------------------------------------------------------
+1.C:\Program Files\MySQL\MySQL Server 8.0\bin>mysql -u root -p
+Enter password: ****
+2. show databases;
+3. use mydb;
+4. show tables;
+5. select*from student;
+================================================================
+
+4.How to connect to Remote MySQL DB Using Putty
+--------------------------------------------------
+1.Ip Address needed to connected system
+2.Putty and MySQL install in the Syste,
+3.Open putty and enter password
+4.Enter mysql -u root -p
+5. show databases;
+6. use mydb;
+7. show tables;
+8. select*from student;

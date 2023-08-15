@@ -1,0 +1,27 @@
+Set operators
+=============
+union
+union all
+intersect
+minus
+==================================================
+USE mydb;
+create table x
+(mark int(5),
+grade varchar(15))
+INSERT INTO y VALUES ('GHI',11);
+INSERT INTO y VALUES ('JK',12);
+
+select num from y union select num from x
+select num from y union all select num from x
+
+create database mydb
+create table x
+(sname varchar(5),
+num int(3))
+
+create table y
+(grade varchar(5),
+num int(3))
+
+INSERT INTO z VALUES (9,'B');

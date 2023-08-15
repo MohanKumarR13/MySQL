@@ -1,0 +1,29 @@
+create database mydb;
+drop database mydb;
+create schema mydb;
+drop schema mydb;
+create database if not exists mydb;
+
+USE mydb;
+create table student 
+(sno int(5),
+sname varchar(15),
+marks int(3));
+
+describe student
+
+INSERT INTO student VALUES (101,'Mohan',100);
+INSERT INTO student (sno,sname,marks)VALUES (102,'Kumar',98);
+INSERT INTO student (sno,sname,marks)VALUES (102,'Kumar',98);
+INSERT INTO student (sno,sname,marks)VALUES (102,'Kumar',null);
+
+select * from mydb.student
+
+use mydb;
+select * from mydb;
+select sno,sname,marks from student;
+select sno SNO,sname STUDENTNAME,marks MARKS from student;
+select sno,sname,marks from student;
+select sno SNO,sname STUDENTNAME,marks+10 MARKS from student;
+select sno,sname,marks from student;
+select sno SNO,sname STUDENTNAME,marks MARKS from student;

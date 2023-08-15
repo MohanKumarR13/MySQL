@@ -1,0 +1,30 @@
+use mydb
+select * from student;
+select * from student where marks>98;
+select * from student where marks<100;
+select * from student where marks<=100;
+select * from student where marks>=98;
+select * from student where marks is null;
+select * from student where marks<100;
+select * from student where sname='Kumar';
+select * from student where marks=98;
+select distinct sno from student ;
+select distinct* from student ;
+select * from student where marks<100 and sno=102;
+select * from student where marks<100 or sno=103;
+select * from student where not marks<100;
+select * from student where marks between 98 and 100;
+select * from student where marks not between 98 and 100;
+select * from student where marks >= 98 and marks <=100;
+select * from student where marks = 98 or marks= 100;
+select * from student where marks in(98,100);
+select sname from student;
+select * from student where sname like 'K%';
+select * from student where sname like '%n';
+select * from student where sname like 'M%n';
+select * from student where sname like '%m%';
+select * from student where sname not like 'K%';
+select * from student where sname like '%a_';
+select * from student where sname like '_____';
+
+

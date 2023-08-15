@@ -1,0 +1,169 @@
+Integrity Constraints
+========================
+Not Null s can't allows null value
+Unique is ensures different values
+Primary key is contans unique and not a null values
+Foreign key is row,record in another table
+Check ensures all values satisefies the specific condition
+Default set a defau;t value
+-------------------------------------------------------------------------------------------------------------
+Not Null
+-----------
+Create database student1
+use student1
+create table student (sno int(3) not null,sname varchar(10),marks int(3));
+insert into student values(101,'mohan',50);
+insert into student values(null,'mohan',50);
+-----------------------------------------------------------------------------------------------
+Unique
+----------
+Create database student1
+-----------Not Null-------------
+use student1
+create table student (sno int(3) not null,sname varchar(10),marks int(3));
+insert into student values(101,'mohan',50);
+insert into student values(null,'mohan',50);
+-------------Unique----------------
+create table student2 (sno int(3) unique,sname varchar(10),marks int(3));
+create table student2 (sno int(3) unique,sname varchar(10),marks int(3),unique(sno));
+insert into student2 values(101,'mohan',50);
+insert into student2 values(101,'kumar',50);
+insert into student2 values(null,'mohan',50);
+insert into student2 values(null,'mohan',50);
+---------------------------------------------------------------------------------------------------------------
+Primary Key
+--------------
+Create database student1
+use student1
+------Not Null-------------
+create table student (sno int(3) not null,sname varchar(10),marks int(3));
+insert into student values(101,'mohan',50);
+insert into student values(null,'mohan',50);
+----Unique---------
+create table student2 (sno int(3) unique,sname varchar(10),marks int(3));
+create table student2 (sno int(3) unique,sname varchar(10),marks int(3),unique(sno));
+insert into student2 values(101,'mohan',50);
+insert into student2 values(101,'kumar',50);
+insert into student2 values(null,'mohan',50);
+insert into student2 values(null,'mohan',50);
+---------Primary Key------------
+create table student3 (sno int(3) primary key,sname varchar(10),marks int(3));
+insert into student3 values(101,'mohan',50);
+insert into student3 values(101,'mohan',50);
+insert into student3 values(null,'mohan',50);
+create table student4 (sno int(3) ,class int(3),sname varchar(10),marks int(3),primary key(sno,class));
+
+
+Create database student1
+use student1
+create table student (sno int(3) not null,sname varchar(10),marks int(3));
+insert into student values(101,'mohan',50);
+insert into student values(null,'mohan',50);
+
+create table student2 (sno int(3) unique,sname varchar(10),marks int(3));
+create table student2 (sno int(3) unique,sname varchar(10),marks int(3),unique(sno));
+insert into student2 values(101,'mohan',50);
+insert into student2 values(101,'kumar',50);
+insert into student2 values(null,'mohan',50);
+insert into student2 values(null,'mohan',50);
+
+create table student3 (sno int(3) primary key,sname varchar(10),marks int(3));
+insert into student3 values(101,'mohan',50);
+insert into student3 values(101,'mohan',50);
+insert into student3 values(null,'mohan',50);
+
+create table student4 (sno int(3) ,class int(3),sname varchar(10),marks int(3),primary key(sno,class));
+
+
+create table school (sno int(3) ,sname varchar(10),marks int(3),primary key(sno));
+insert into school values(101,'mohan',50);
+insert into school values(102,'kumar',75);
+insert into school values(103,'mohankumar',100);
+select * from school
+drop table library
+---Foreign Key------
+create table library (sno int(3) ,foreign key(sno) references school(sno),book_name varchar(15));
+insert into library values(101,'java');
+select * from library
+insert into library values(105,'java'); --invalid
+insert into library values(null,'js');
+select * from school
+delete  from school where sno=101
+select * from library
+delete from library where sno=101
+delete from school where sno=101
+
+
+When You Insert a child table so that column refer into parent table
+If you remove parent table record directly without deleting records from child table ---Not allowed
+First Delete dependent record from child table then delete record from parent table
+ On Delete Casecade 
+        If you delete record from parent table directly it will be removed and corresponding records will be also deleted from child table
+
+drop table school
+drop table library
+use mydb
+create table school (sno int(3) ,sname varchar(15),marks int(3),primary key(sno));
+
+insert into school values(101,'mohan',50);
+insert into school values(102,'mohan',50);
+insert into school values(103,'mohan',50);
+create table library (sno int(3) ,bookname varchar(10),foreign key(sno) references school(sno) on delete cascade);
+insert into library values(101,'java'); 
+insert into library values(102,'js');
+select * from library
+select * from school
+delete from school where sno=101
+---------------------------------------------------------------------------------------
+Check Constraints
+------------------
+drop table student
+create table student (sno int(3) ,sname varchar(10),marks int(3) check(marks between 50 and 100));
+insert into student values(101,'mohan',50);
+insert into student values(102,'kumar',35);--invalid
+insert into student values(103,'mohankumar',1000);
+use mydb
+create table locations
+(city varchar (15) check(city in('HYD','DL','AP')),country varchar(15),pin int(8))
+insert into locations values('HYD','mohankumar',1000);
+insert into locations values('KL','mohankumar',1000);
+insert into locations values('DL','mohankumar',1000);
+select * from locations
+
+=======================================================================================================
+Default
+-----------
+use mydb
+select now()
+create table Orders(ID int(5),OrderNumber int(5),OrderDate datetime default now())
+insert into orders values(101,1314134,'2023-08-01 14:33:10')
+select * from orders
+insert into orders (id,ordernumber)values(101,1314134)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

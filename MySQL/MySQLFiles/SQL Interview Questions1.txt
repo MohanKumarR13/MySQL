@@ -1,0 +1,28 @@
+1.Write an SQL Query to fetch the EMPID and Name of all the employees working under manager with id-986
+Select empid,name from employee where managerid=986
+2.Write an SQL Query to fetch the different projects avalable from the salary table
+select distinct(project)from salary
+3.Write an SQL Query to fetch the count of employees working in project P1
+select count (*) from salary where project='P1'
+4.Write an SQL Query to find the maximum,minimum and average salary of employees
+select max(salaey),min(salary),avg(salary)from salary
+5.Write an SQL Query to find the employee id whose salary lies in the range of 30000 and 40000
+select empid,salary from salary
+wheresalary between 30000 and 40000
+6.Write an SQL Query to fetch those employees who live in chennai and work under manager with manager id-986
+select empid,city,managerid from employee
+where city='chennai' and managerid='986'
+7.Write an SQL Query to fetch all the employees who either live in chennai or work under a manager with managerid-321
+select empid,city,managerid from employee
+where city='chennai' or managerid='321'
+8.Write an SQL Query to fetch all those employees who work on project other than P1
+select empid from salary where not project='P1'
+(OR)
+select empid from salary where project <>'P1'
+9.Write an SQL Query to display the total salary of each employee adding the salary with variable value
+select empid salary+variable as totalsalary from salary
+10.Write an SQL Query to fetch the employees whose name begins with any two characters followed by text "vi" and ending with any sequence of characters
+select name from employee where name like '_vi%';
+
+
+

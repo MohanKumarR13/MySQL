@@ -1,0 +1,58 @@
+SQL Joins
+=========
+Inner Join - Common Data Matched Record
+Left Join - Right Table Not Present Data(Matched Record+unmatched record left table)
+Right Join - Left Table Not Present Data(Matched Record+unmatched record right table)
+Full join - Matched Record+unmatched record left table+unmatched record right table
+
+self join
+=====================================
+use mydb
+create table tab1
+(numid int(50))
+create table tab2
+(numid int(50))
+INSERT INTO tab1 VALUES (14);
+INSERT INTO tab2 VALUES (15);
+
+select * from tab1 inner join tab2 on tab1.numid=tab2.numid
+select * from tab1 left join tab2 on tab1.numid=tab2.numid
+select * from tab1 right join tab2 on tab1.numid=tab2.numid
+select * from tab1 inner join tab2 on tab1.numid=tab2.numid
+use world
+select * from country;
+select * from countrylanguage;
+select * from countrylanguage inner join country on countrylanguage.countrycode=country.code
+select * from countrylanguage inner join country on countrylanguage.countrycode<>country.code
+select  Code,isofficial from countrylanguage  inner join country on countrylanguage.countrycode=country.code
+select  Code,isofficial from countrylanguage  left join country on countrylanguage.countrycode=country.code
+select countrycode,language,isofficial,percentage from countrylanguage left join country on (country.name=country.code)
+select countrycode,language,isofficial,percentage from countrylanguage right join country on (country.name=country.code)
+select c.code,n.name from country cl,country clt where cl.code=clt.name
+
+=============================================================================================================================
+Sub Queries
+-------------
+use sakila
+select amount from payment
+select amount from payment where staff_id=1
+select amount from payment where amount<2
+select amount from payment where amount<(select amount from payment where staff_id=0)
+select max(amount) from payment
+select amount from payment where amount <(select max(amount) from payment)
+select max(amount) from payment where amount <(select max(amount) from payment)
+
+select max(amount) from payment where amount < (select max(amount) from payment where amount <(select max (amount) from payment))
+select  amount from payment where staff_id=1
+select  amount from payment where amount>1
+select  amount from payment where staff_id in (select  amount from payment where amount=0.99)
+select * from payment where amount =(select max (amount) from payment)
+select * from payment where amount in (select amount from payment where staff_id=1)
+select * from payment where amount < any (select amount from payment where staff_id=1)
+select * from payment where amount >any (select amount from payment where staff_id=1)
+select * from payment where amount < all (select amount from payment where staff_id=1)
+select * from payment where amount >all (select amount from payment where staff_id=1)
+use world
+select countrycode,percentage,country.code from countrylanguage where countrylanguage.countrycode=country.code
+
+

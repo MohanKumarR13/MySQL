@@ -1,0 +1,25 @@
+Group By-> Grouping the Results from the table
+Having->
+
+Where---Group By--- Having
+
+============================================================================================================================
+
+use sakila
+select * from payment
+
+select customer_id ,sum(amount) from payment group by customer_id
+select customer_id ,avg(amount) from payment group by customer_id
+select customer_id ,max(amount),min(amount) from payment group by customer_id
+select customer_id ,count(*) from payment group by customer_id
+select customer_id,staff_id,count(*) from payment group by customer_id,staff_id
+select customer_id ,count(*) from payment group by customer_id having count(*)>40
+
+select customer_id ,sum(amount) from payment group by customer_id having sum(amount)>100
+select customer_id ,sum(amount) from payment  where customer_id<>1 group by customer_id
+select customer_id ,sum(amount) from payment  where customer_id<>1 group by customer_id having sum(amount)>100
+select * from payment order by amount
+select * from payment order by amount desc
+select customer_id ,sum(amount) from payment group by customer_id having sum(amount)>10 order by sum(amount)
+select customer_id ,sum(amount) from payment where customer_id<>100 group by customer_id having sum(amount)>10 order by sum(amount)desc
+

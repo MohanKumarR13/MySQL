@@ -1,0 +1,57 @@
+Enter Root Password
+
+show databases;
+
+select database command for 
+use world
+ and shows the tables for
+show tables;
+
+shows table data
+
+select * from city;
+
+Session 2
+
+DataBase
+Schema
+
+create database mydb;
+=====================
+
+drop database mydb;
+
+create database if not exists mydb;
+drop database mydb;
+create schema mydb;
+drop schema mydb;
+
+Create Table
+============
+USE mydb;
+create table student (sno int(5),sname varchar(15),marks int(3));
+
+describe student; table details
+
+INSERT INTO student VALUES (101,'Mohan',100);
+
+select * from mydb.student
+
+INSERT INTO student (sno,sname,marks)VALUES (102,'Kumar',98);
+
+INSERT INTO student (sno,sname,marks)VALUES (102,'Kumar',null);
+
+
+
+Create db
+Create new table
+Inserted data into the student table
+Select the Data
+
+select rows:
+select sno,sname,marks from student;
+select sno SNO,sname STUDENTNAME,marks MARKS from student;---->Eliyasis
+
+select sno SNO,sname STUDENTNAME,marks+10 MARKS from student;
+
+

@@ -1,0 +1,22 @@
+Auto Increment
+==============
+
+create database student
+use mydb
+drop table student
+create table student (sno int(5) primary key auto_increment,sname varchar(15),marks int(5));
+insert into student (sname,marks) values('x',60)
+insert into student (sname,marks) values('y',70)
+insert into student (sname,marks) values('z',80)
+alter table student auto_increment=100
+select * from student;
+delete from student where sno=3;
+set sql_safe_updates=0;
+delete from student
+
+
+Limt
+======
+use world
+select* from country limit 10
+select* from country limit 5,10
